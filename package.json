@@ -1,26 +1,84 @@
 {
   "name": "com-tradingbot",
   "version": "0.1.0",
-  "private": true,
-  "dependencies": {
-    "@testing-library/jest-dom": "^5.17.0",
-    "@testing-library/react": "^13.4.0",
-    "@testing-library/user-event": "^13.5.0",
-    "@types/jest": "^27.5.2",
-    "@types/node": "^16.18.95",
-    "@types/react": "^18.2.74",
-    "@types/react-dom": "^18.2.24",
-    "react": "^18.2.0",
-    "react-dom": "^18.2.0",
-    "react-scripts": "5.0.1",
-    "typescript": "^4.9.5",
-    "web-vitals": "^2.1.4"
-  },
+  "author": "johnboris",
   "scripts": {
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",
-    "eject": "react-scripts eject"
+    "eject": "react-scripts eject",
+    "lint": "eslint --fix \"**/*.{js,ts,tsx}\"",
+    "prettier": "prettier --config .prettierrc \"**/*.{ts,tsx,js}\" --write"
+  },
+  "dependencies": {
+    "@ant-design/icons": "5.2.6",
+    "@ant-design/web3": "^1.9.0",
+    "@ant-design/web3-icons": "^1.4.2",
+    "@ant-design/web3-wagmi": "^2.4.1",
+    "@coinbase/wallet-sdk": "3.7.2",
+    "@iconify/react": "^4.1.1",
+    "@walletconnect/ethereum-provider": "2.11.0",
+    "@web3-react/coinbase-wallet": "8.2.3",
+    "@web3-react/core": "8.2.3",
+    "@web3-react/metamask": "8.2.4",
+    "@web3-react/network": "8.2.3",
+    "@web3-react/types": "8.2.3",
+    "@web3-react/url": "8.2.3",
+    "@web3-react/walletconnect-v2": "8.5.1",
+    "antd": "^5.12.5",
+    "axios": "^1.6.8",
+    "buffer": "^6.0.3",
+    "chart.js": "^4.4.2",
+    "ethers": "5.7.2",
+    "html-react-parser": "^5.1.9",
+    "lodash": "^4.17.21",
+    "millify": "^6.1.0",
+    "react": "18.2.0",
+    "react-chartjs-2": "^5.2.0",
+    "react-day-and-night-toggle": "^1.0.18",
+    "react-dom": "18.2.0",
+    "react-fast-marquee": "^1.6.4",
+    "react-jazzicon": "1.0.4",
+    "react-lottie": "^1.2.4",
+    "react-scripts": "5.0.1",
+    "react-text-gradients": "^1.0.2",
+    "sass": "^1.72.0",
+    "swr": "^2.2.4",
+    "tailwind": "^4.0.0",
+    "typescript": "5.3.3",
+    "uuid": "^9.0.1",
+    "wagmi": "^2.5.12"
+  },
+  "overrides": {
+    "typescript": "5.3.3"
+  },
+  "devDependencies": {
+    "@babel/plugin-proposal-private-property-in-object": "7.21.11",
+    "@reduxjs/toolkit": "^2.2.2",
+    "@types/jest": "29.5.11",
+    "@types/lodash": "^4.17.0",
+    "@types/node": "20.10.5",
+    "@types/react": "18.2.45",
+    "@types/react-dom": "18.2.18",
+    "@types/react-lottie": "^1.2.10",
+    "@typescript-eslint/eslint-plugin": "6.16.0",
+    "@typescript-eslint/parser": "6.16.0",
+    "dotenv": "16.3.1",
+    "eslint": "8.56.0",
+    "eslint-config-prettier": "9.1.0",
+    "eslint-config-react-app": "7.0.1",
+    "eslint-import-resolver-typescript": "3.6.1",
+    "eslint-plugin-import": "2.29.1",
+    "eslint-plugin-prettier": "5.1.2",
+    "eslint-plugin-react": "7.33.2",
+    "eslint-plugin-react-hooks": "4.6.0",
+    "prettier": "3.1.1",
+    "react-apexcharts": "^1.4.1",
+    "react-redux": "^9.1.0",
+    "react-router-dom": "^6.22.3",
+    "redux": "^5.0.1",
+    "tailwindcss": "^3.4.1",
+    "typescript": "5.3.3"
   },
   "eslintConfig": {
     "extends": [
@@ -30,19 +88,10 @@
   },
   "browserslist": {
     "production": [
-      ">0.2%",
-      "not dead",
-      "not op_mini all"
+      "defaults"
     ],
     "development": [
-      "last 1 chrome version",
-      "last 1 firefox version",
-      "last 1 safari version"
+      "defaults"
     ]
-  },
-  "devDependencies": {
-    "autoprefixer": "^10.4.19",
-    "postcss": "^8.4.38",
-    "tailwindcss": "^3.4.3"
   }
 }

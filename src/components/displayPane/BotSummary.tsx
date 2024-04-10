@@ -39,7 +39,7 @@ const BotSummary: React.FC<BotSummaryProps> = ({ isDarkMode }) => {
   const navigate = useNavigate();
 
   const handleTrade = () => {
-    navigate('/trade');
+    navigate('/trade_dash');
   };
   const { isTablet } = useWindowSize();
   return (
@@ -72,7 +72,7 @@ const BotSummary: React.FC<BotSummaryProps> = ({ isDarkMode }) => {
   hover:bg-blue-600 border-2 border-blue-300 hover:border-blue-600 dark:border-blue-600
   dark:hover:border-blue-600 text-blue-600 hover:text-white dark:text-blue-600
   dark:hover:bg-blue-600 dark:hover:text-white">
-          <Link to="/trade">
+          <Link to="/trade_dash">
             Trade Now
           </Link>
           <ArrowRightOutlined />

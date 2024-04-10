@@ -1,5 +1,5 @@
-import { FC } from "react";
 import { useWindowSize } from "hooks";
+import { FC } from "react";
 
 type MainContentProps = {
   children?: React.ReactNode;

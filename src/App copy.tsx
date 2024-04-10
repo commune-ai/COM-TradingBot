@@ -77,7 +77,7 @@ function App() {
           <Router>
             <Routes>
               <Route path="/" element={<Home />} />
-              <Route path='/trade_dash' element={
+              <Route path='/dashboard' element={
               <Dashboard
                   // balances={balances}
                   // size={size}

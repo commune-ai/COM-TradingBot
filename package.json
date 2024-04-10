@@ -43,6 +43,7 @@
     "react-scripts": "5.0.1",
     "react-text-gradients": "^1.0.2",
     "sass": "^1.72.0",
+    "semantic-ui-react": "^2.1.5",
     "swr": "^2.2.4",
     "tailwind": "^4.0.0",
     "typescript": "5.3.3",

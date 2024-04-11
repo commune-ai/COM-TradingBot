@@ -1,5 +1,7 @@
 import { Card, Col, Row } from 'antd';
 import { Buffer } from "buffer";
+import DemoArea from 'components/DemoArea';
+import PortfolioChart from 'components/PortfolioChart';
 import { useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
 
@@ -46,12 +48,12 @@ function Dashboard() {
 
     const rowStyle = {
         width: '100%',
-        paddingBottom: '3px',
-        paddingTop: '70px',
+        marginBootom: '3px',
+        marginTop: '70px',
     }
 
     const cardStyle= {
-        height: '300px'
+        height: '600px'
     }
 
     return (
@@ -59,7 +61,7 @@ function Dashboard() {
             <Row gutter={16}>
                 <Col span={8}>
                     <Card title="Equity" onClick={() => navigation('/equity_live')} hoverable bordered={false} headStyle={{ textAlign: 'center', color: '#2185d0' }} style={{ textAlign: 'center', color: '#2185d0', ...cardStyle }}>
-                        <Row>
+                        {/* <Row>
                             <Col span={12}>
                                 <h1>Totail Equity</h1>
                                 <h2>0.0 $USDT</h2>
@@ -68,12 +70,8 @@ function Dashboard() {
                                 <h1>Available Equity</h1>
                                 <h2>0.0 $USDT</h2>
                             </Col>
-                        </Row>
-                        {/* <PortfolioChart 
-                            dataProp={
-                                equityTimeSeries.live
-                            }
-                        /> */}
+                        </Row> */}
+                        <PortfolioChart/>
                     </Card>
                 </Col>
                 <Col span={8}>
@@ -81,16 +79,17 @@ function Dashboard() {
                         <Row>
                             <Col span={12}>
                                 <h1>Totail Equity</h1>
-                                <h2>0.0 $USDT</h2>
+                                <h2>123.4 $USDT</h2>
                             </Col>
                             <Col span={12}>
                                 <h1>Available Equity</h1>
-                                <h2>0.0 $USDT</h2>
+                                <h2>343.5 $USDT</h2>
                             </Col>
                         </Row>
                         {/* <PortfolioChart 
                         dataProp={equityTimeSeries.test}
                         /> */}
+                        <DemoArea/>
                     </Card>
                 </Col>
                 <Col span={8}>
@@ -98,15 +97,15 @@ function Dashboard() {
                         <Row>
                             <Col span={12}>
                                 <h1>#trading bots</h1>
-                                <h2>0</h2>
+                                <h2>532</h2>
                                 <h1 style={{paddingTop: '50px'}}>Best Win Rate</h1>
-                                <h2>0</h2>
+                                <h2>234</h2>
                             </Col>
                             <Col span={12}>
                                 <h1>#active trading bots</h1>
-                                <h2>0</h2>
+                                <h2>234</h2>
                                 <h1 style={{paddingTop: '50px'}}>Most Trades</h1>
-                                <h2>0</h2>
+                                <h2>143</h2>
                             </Col>
                         </Row>
                     </Card>
@@ -118,21 +117,21 @@ function Dashboard() {
                         <Row>
                             <Col span={8}>
                                 <h1>#trades</h1>
-                                <h2>0</h2>
+                                <h2>23</h2>
                                 <h1  style={{paddingTop: '50px'}}>Win Rate</h1>
-                                <h2>0%</h2>
+                                <h2>54%</h2>
                             </Col>
                             <Col span={8}>
                                 <h1>Max trade duration</h1>
-                                <h2>0m</h2>
+                                <h2>532m</h2>
                                 <h1  style={{paddingTop: '50px'}}>Best Trade</h1>
-                                <h2>0.00%</h2>
+                                <h2>23.25%</h2>
                             </Col>
                             <Col span={8}>
                                 <h1>Avg trade duration</h1>
-                                <h2>0m</h2>
+                                <h2>34m</h2>
                                 <h1 style={{paddingTop: '50px'}}>Worst Trade</h1>
-                                <h2>0.00%</h2>
+                                <h2>23.3%</h2>
                             </Col>
                         </Row>
                     </Card>
@@ -142,11 +141,11 @@ function Dashboard() {
                         <Row>
                             <Col span={8}>
                                 <h1>#positions</h1>
-                                <h2>0</h2>
+                                <h2>53</h2>
                             </Col>
                             <Col span={8}>
                                 <h1>Total Size</h1>
-                                <h2>0.0 $USDT</h2>
+                                <h2>233.23 $USDT</h2>
                             </Col>
                             <Col span={8}>
                                 <h1>Net profit</h1>

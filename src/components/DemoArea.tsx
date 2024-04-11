@@ -1,9 +1,18 @@
 import { Area, AreaConfig } from '@ant-design/plots';
 import React, { useEffect, useState } from 'react';
 
+// Extend AreaConfig interface to include custom options
+interface CustomAreaConfig extends AreaConfig {
+  connectNulls?: {
+    connect: boolean;
+    connectFill: string;
+    connectFillOpacity: number;
+  };
+}
+
 interface DemoAreaProps {}
 
-const PortfolioChart: React.FC<DemoAreaProps> = () => {
+const DemoArea: React.FC<DemoAreaProps> = () => {
   const [data, setData] = useState<any[]>([]);
 
   useEffect(() => {
@@ -13,13 +22,18 @@ const PortfolioChart: React.FC<DemoAreaProps> = () => {
       .catch(error => console.error('Error fetching data:', error));
   }, []);
 
-  const config: AreaConfig = {
-    data: data, // Pass fetched data here
-    xField: 'date', // Assuming 'date' is a field in your data
+  const config: CustomAreaConfig = {
+    data: data,
+    xField: 'date',
     yField: 'close',
+    connectNulls: {
+      connect: true,
+      connectFill: 'grey',
+      connectFillOpacity: 0.15,
+    },
   };
 
   return <Area {...config} />;
 };
 
-export default PortfolioChart;
+export default DemoArea;

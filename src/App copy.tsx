@@ -28,6 +28,7 @@ import {
   CustomHeader, MainContent
 } from "layout";
 import Dashboard from "pages/Dashboard";
+import EquityLive from "pages/EquityLive";
 import Home from "pages/Home";
 import "styles/App.css";
 
@@ -90,6 +91,7 @@ function App() {
                   // updatePipelinesMetrics={this.updatePipelinesMetrics}
             />} />
             </Routes>
+            <Route path="/equity_live" element={<EquityLive/>} />
           </Router>
         </MainContent>
       </Layout>

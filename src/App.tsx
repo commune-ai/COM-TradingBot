@@ -1,37 +1,20 @@
-import { Buffer } from "buffer";
-// import {
-//   DropdownOptions,
-//   MenuOption,
-//   PipelineParams,
-//   Position,
-//   StartPipeline,
-//   StopPipeline,
-//   GetCurrentPrices,
-//   UpdateMessage,
-//   DeletePipeline,
-//   BalanceObj,
-//   Decimals,
-//   RawTrade,
-//   PipelinesMetrics,
-//   RawPipeline,
-//   PipelinesObject, TradesObject, EditPipeline, EquityTimeSeries, Strategy
-// } from "../types";
 import {
   ConfigProvider,
   Layout, theme
 } from 'antd';
+import { Buffer } from "buffer";
 import { useState } from "react";
 import { Route, BrowserRouter as Router, Routes } from "react-router-dom";
-
 
 import {
   CustomHeader, MainContent
 } from "layout";
+
+
 import Dashboard from "pages/Dashboard";
+import EquityLive from "pages/EquityLive";
 import Home from "pages/Home";
 import "styles/App.css";
-
-
 
 const styles = {
   layout: {
@@ -42,25 +25,8 @@ const styles = {
   }
 } as const;
 
-// interface State {
-//   symbolsOptions: DropdownOptions[];
-//   strategiesOptions: Strategy[];
-//   candleSizeOptions: DropdownOptions[];
-//   exchangeOptions: DropdownOptions[];
-//   trades: TradesObject;
-//   pipelines: PipelinesObject;
-//   positions: Position[];
-//   balances: BalanceObj
-//   equityTimeSeries: EquityTimeSeries
-//   menuOption: MenuOption,
-//   symbols: string[],
-//   currentPrices: Object
-//   pipelinesMetrics: PipelinesMetrics
-// }
+function App () {
 
-
-
-function App() {
   const { defaultAlgorithm, darkAlgorithm } = theme;
   const [isDarkMode, setIsDarkMode] = useState(true);
   if (!window.Buffer) window.Buffer = Buffer;
@@ -78,17 +44,8 @@ function App() {
             <Routes>
               <Route path="/" element={<Home />} />
               <Route path='/trade_dash' element={
-              <Dashboard
-                  // balances={balances}
-                  // size={size}
-                  // pipelines={pipelines}
-                  // trades={trades}
-                  // positions={positions}
-                  // currentPrices={currentPrices}
-                  // pipelinesMetrics={pipelinesMetrics}
-                  // equityTimeSeries={equityTimeSeries}
-                  // updatePipelinesMetrics={this.updatePipelinesMetrics}
-            />} />
+              <Dashboard/>} />
+            <Route path="/equity_live" element={<EquityLive/>} />
             </Routes>
           </Router>
         </MainContent>

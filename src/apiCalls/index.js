@@ -10,7 +10,7 @@ const getToken = () => {
   return `Bearer ${window.localStorage.getItem('crypto-token')}`
 }
 
-export const getResources = async (resources, history) => {
+export const getResources = async (resources) => {
 
   const resourcesString = resources.join()
 

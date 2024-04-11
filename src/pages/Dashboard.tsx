@@ -1,12 +1,9 @@
 import { Card, Col, Row } from 'antd';
 import { Buffer } from "buffer";
-
-// import { theme } from 'antd';
-// import { useState } from "react";
-
+import { useEffect } from 'react';
+import { useNavigate } from 'react-router-dom';
 
 import "styles/App.css";
-
 
 
 // const styles = {
@@ -18,10 +15,34 @@ import "styles/App.css";
 //   }
 // } as const;
 
-
 function Dashboard() {
     // const [isDarkMode, setIsDarkMode] = useState(true);
+    // const { equityTimeSeries } = props
+    
+    // const [equityTimeSeries, setEquityTimeSeries] = useState<EquityTimeSeries>({
+    //     test: [],
+    //     live: [],
+    //   });
+    const navigation = useNavigate()
     if (!window.Buffer) window.Buffer = Buffer;
+
+    useEffect(() => {
+        getTotalEquityTimeSeries();
+
+    }, [])
+
+    const getTotalEquityTimeSeries = () => {
+        // getEquityTimeSeries({ pipelineId: null, maxItems: 500 })
+        //   .then((response) => {
+            
+        //     setEquityTimeSeries({
+        //       live: response.data.live,
+        //       test: response.data.testnet,
+        //     });
+        //   })
+        //   .catch((error) => console.log(error.message));
+      };
+
 
     const rowStyle = {
         width: '100%',
@@ -37,7 +58,7 @@ function Dashboard() {
         <div style={rowStyle}>
             <Row gutter={16}>
                 <Col span={8}>
-                    <Card title="Equity" hoverable bordered={false} headStyle={{ textAlign: 'center', color: '#2185d0' }} style={{ textAlign: 'center', color: '#2185d0', ...cardStyle }}>
+                    <Card title="Equity" onClick={() => navigation('/equity_live')} hoverable bordered={false} headStyle={{ textAlign: 'center', color: '#2185d0' }} style={{ textAlign: 'center', color: '#2185d0', ...cardStyle }}>
                         <Row>
                             <Col span={12}>
                                 <h1>Totail Equity</h1>
@@ -48,6 +69,11 @@ function Dashboard() {
                                 <h2>0.0 $USDT</h2>
                             </Col>
                         </Row>
+                        {/* <PortfolioChart 
+                            dataProp={
+                                equityTimeSeries.live
+                            }
+                        /> */}
                     </Card>
                 </Col>
                 <Col span={8}>
@@ -62,7 +88,9 @@ function Dashboard() {
                                 <h2>0.0 $USDT</h2>
                             </Col>
                         </Row>
-
+                        {/* <PortfolioChart 
+                        dataProp={equityTimeSeries.test}
+                        /> */}
                     </Card>
                 </Col>
                 <Col span={8}>
